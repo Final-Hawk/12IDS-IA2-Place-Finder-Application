@@ -1,0 +1,194 @@
+:root {
+	/* Set  colour variables for default light theme */
+	--outside-background-color: #e7e8ec;
+	--main-background-color: #fff;
+	--main-inside-background: #fff;
+	--table-header-color: #1361fe;
+	--table-highlight-color: #f2f2f2;
+	--table-hover-color: #D3D3D3;
+	--border-colour: #ddd;
+	--colour: black;
+	--colour-opposite: white;
+	transition: .3s
+}
+
+:root.light {
+	/* Set  colour variables for default dark theme */
+	--outside-background-color: #0c0f1b;
+	--main-background-color: #111827;
+	--main-inside-background: #1f2937;
+	--table-header-color: #4a86e9;
+	--table-highlight-color: #374151;
+	--table-hover-color: #505f77;
+	--border-colour: black;
+	--colour: white;
+	--colour-opposite: black;
+	transition: .3s
+}
+
+body {
+	background-color: var(--outside-background-color);
+	margin: 0;
+	color: var(--colour)
+}
+
+h1 {
+	font-family: arial;
+	color: var(--colour)
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-family: arial;
+	font-size: 18px;
+	border-bottom: 1px solid var(--border-colour);
+	background-color: var(--main-inside-background);
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4)
+}
+
+td,
+th {
+	text-align: left;
+	padding: 12px
+}
+
+th {
+	background-color: #1361fe;
+	color: var(--colour-opposite)
+}
+
+.table tr:nth-child(even) {
+	background-color: var(--table-highlight-color)
+}
+
+tbody tr:hover {
+	background-color: var(--table-hover-color)
+}
+
+.table {
+	border-radius: 10px;
+	overflow-y: auto;
+	height: 600px;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4)
+}
+
+.mainTable td {
+	text-transform: lowercase
+}
+
+.mainTable td:first-letter {
+	text-transform: capitalize
+}
+
+.mainTable thead th {
+	position: sticky;
+	top: -1px
+}
+
+.mainTable thead {
+	position: sticky;
+	top: -1px;
+	box-shadow: 0 3px 3px -1px rgba(0, 0, 0, .4)
+}
+
+.searchBar {
+	width: 25%;
+	background-color: var(--table-highlight-color);
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 12px 12px 12px 12px;
+	border: 1px solid var(--border-colour);
+	margin-bottom: 12px;
+	color: var(--colour);
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4)
+}
+
+.btn-theme {
+	background-color: var(--table-highlight-color);
+	border: 1px solid var(--border-colour);
+	float: right;
+	border-radius: 10px;
+	transition: .5s;
+	color: var(--colour);
+	font-size: 16px;
+	padding: 12px 12px 12px 12px;
+	margin-bottom: 12px;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4)
+}
+
+.btn-theme:hover {
+	background-color: var(--table-hover-color);
+	color: var(--colour) !important;
+	transition: .5s;
+	border-radius: 12px
+}
+
+.mainContent h1 {
+	padding: 10px 20px
+}
+
+.mainContent {
+	width: 80%;
+	margin: auto;
+	padding: 10px 10px;
+	border-radius: 10px;
+	background-color: var(--main-background-color);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+}
+
+.topnav {
+	overflow: hidden;
+	height: 50px;
+	margin: 0;
+	margin-bottom: 20px
+}
+
+.tab {
+	border-bottom: #777676 1px solid;
+	margin-bottom: 10px
+}
+
+.tab button {
+	background-color: var(--main-background-color);
+	outline: 0;
+	cursor: pointer;
+	padding: 5px 16px;
+	border: none;
+	transition: .3s;
+	font-size: 20px;
+	color: var(--colour)
+}
+
+.tab button.active {
+	border-bottom: var(--table-header-color) 3px solid;
+	color: var(--table-header-color)
+}
+
+.tabcontent {
+	display: none;
+	padding: 6px 12px
+}
+
+#Boats {
+	display: block
+}
+
+select {
+	border: none;
+	background-color: var(--table-highlight-color);
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 12px 12px 12px 12px;
+	border: 1px solid var(--border-colour);
+	margin-bottom: 12px;
+	color: var(--colour);
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4)
+}
+
+select:focus {
+	outline: 0
+}
+
+
+  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import the css file for styling -->
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="topnav">
+  </div>
+  <!-- Container div to hold all the main content -->
+  <div class="mainContent">
+    <!-- Header Text -->
+    <h1> Find Your Spot </h1>
+    <div class="tab">
+      <!-- The following three buttons create the tabs -->
+      <button class="tablinks active" onclick="clickHandle(event, 'Boats')">Boat Locations</button>
+      <button class="tablinks" onclick="clickHandle(event, 'Parks')">Parks</button>
+      <button class="tablinks" onclick="clickHandle(event, 'Trails')">Trails</button>
+    </div>
+
+    <!-- Div for boat ramp locations table -->
+    <div id="Boats" class="tabcontent">
+      <!-- Search bar input -->
+      <input type="text" id="searchBoats" class="searchBar" onkeyup="searchTable('searchBoats','boatTable')"
+        placeholder="Search...">
+      <!-- Allow selecting of table column to search -->
+      <select id="boatSelect" onchange="searchTable('searchBoats','boatTable')">
+        <option value="0">Description</option>
+        <option value="1">Street</option>
+        <option value="2">Suburb</option>
+      </select>
+      <!-- Button to call the toggle theme function (Javascript) -->
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()">Dark Theme</button>
+      <div class="table">
+        <table id="boatTable" class="mainTable sortable">
+          <!-- Table header column -->
+          <thead>
+            <tr class="header">
+              <th>Description</th>
+              <th>Street</th>
+              <th>Suburb</th>
+            </tr>
+          </thead>
+          <!-- Table rows, using jinja template to fill -->
+          <tbody>
+            {% for record in boats %}
+            <tr class="item">
+              {% for value in record %}
+              <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Div for park locations table -->
+    <div id="Parks" class="tabcontent">
+      <!-- Search bar input -->
+      <input type="text" id="searchParks" class="searchBar" onkeyup="allsearchTable('searchParks','parkTable')"
+        placeholder="Search...">
+      <!-- Button to call the toggle theme function (Javascript) -->
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()">Dark Theme</button>
+      <div class="table">
+        <table id="parkTable" class="mainTable sortable">
+          <!-- Table header column -->
+          <thead>
+            <tr class="header">
+              <th>Park Name</th>
+              <th>House Number</th>
+              <th>Street Address</th>
+              <th>Suburb</th>
+            </tr>
+          </thead>
+          <!-- Table rows, using jinja template to fill -->
+          <tbody>
+            {% for record in parks %}
+            <tr class="item">
+              {% for value in record %}
+              <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Div for trails location table -->
+    <div id="Trails" class="tabcontent">
+      <!-- Search bar input -->
+      <input type="text" id="searchTrails" class="searchBar" onkeyup="allsearchTable('searchTrails','trailTable')"
+        placeholder="Search...">
+      <!-- Button to call the toggle theme function (Javascript) -->
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()">Dark Theme</button>
+      <div class="table">
+        <table id="trailTable" class="mainTable sortable">
+          <!-- Table header column -->
+          <thead>
+            <tr class="header">
+              <th>Park Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <!-- Table rows, using jinja template to fill -->
+          <tbody>
+            {% for record in trails %}
+            <tr class="item">
+              {% for value in record %}
+              <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Imports a script for the sorting functionality on the table -->
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+  <!-- Import the script file for the website -->
+  <script src="static/script.js"></script>
+</body>
+
+</html>
